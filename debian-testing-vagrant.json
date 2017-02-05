@@ -1,0 +1,47 @@
+{
+  "variables": {
+    "HASH": "{{env `MD5`}}"
+    },
+  "builders": [
+    {
+    "type" : "virtualbox-iso",
+    "guest_os_type": "Debian_64",
+    "iso_url": "http://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/debian-testing-amd64-netinst.iso",
+    "iso_checksum": "{{user `HASH`}}",
+    "iso_checksum_type": "md5",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "25m",
+    "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+    "http_directory": ".",
+    "boot_command": [
+      "<esc><wait>",
+      "install ",
+      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+      "auto ",
+      "debconf/frontend=noninteractive ",
+      "console-setup/ask_detect=false ",
+      "debian-installer=en_US ",
+      "locale=en_US ",
+      "kbd-chooser/method=us ",
+      "console-keymaps-at/keymap=us ",
+      "keyboard-configuration/xkb-keymap=us ",
+      "netcfg/get_hostname={{ .Name }} ",
+      "netcfg/get_domain=home.org <enter>"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+    "type": "shell",
+    "script": "provisioning.sh",
+    "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'"
+    }
+  ],
+  "post-processors": [
+    {
+    "type": "vagrant",
+    "output": "debian-testing-vagrant.box"
+    }
+  ] 
+}
