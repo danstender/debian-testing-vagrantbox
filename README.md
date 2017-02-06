@@ -1,6 +1,8 @@
 This is a JSON template, a preseeding configuration for the Debian Installer (d-i), and helper scripts to automatically build Vagrant boxes [1] from Debian "testing" daily snapshots [2] with HashiCorp's Packer [3].
 
-To use this, a Packer binary [4] and Virtualbox [5] must be available.
+To use this, a Packer binary [4] and Virtualbox [5] must be present.
+There's a Debian package [6] becoming available for Debian 9, and other distributions have Packer packages, too.
+
 There's a Makefile included which conveniently provides the MD5 hash of the Debian netinst ISO for the Packer template.
 If you have GNU Make, awk and wget available you could just do:
 ```
@@ -42,3 +44,5 @@ Links
 [4] https://www.packer.io/downloads.html
 
 [5] https://www.virtualbox.org/
+
+[6] https://packages.qa.debian.org/p/packer.html
