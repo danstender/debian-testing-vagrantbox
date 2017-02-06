@@ -12,6 +12,10 @@ Otherwise, you could run the template with:
 MD5=<hash> packer build debian-testing-vagrant.json
 ```
 where `<hash>` must be copied from <http://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/MD5SUMS> (it's the hash for `debian-testing-amd64-netinst.iso`).
+Like:
+```
+MD5=b92a4e25eb9997824b6d0f33198327e6 packer build debian-testing-vagrant.json
+```
 
 A fast internet connection is needed for good performance.
 If the time needed to install the Debian base system within the virtual machine exceeds the preset timeout for Packer to wait for SSH to become available for that (25 minutes), you could expand `ssh_wait_timeout` in the template as it's needed.
