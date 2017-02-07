@@ -1,4 +1,4 @@
-This is a JSON template, a preseeding configuration for the Debian Installer (d-i), and helper scripts to automatically build Vagrant boxes [1] from Debian "testing" daily snapshots [2] with HashiCorp's Packer [3].
+This is a JSON template, a preseeding configuration for the Debian Installer (d-i), and helper scripts to automatically build Vagrant boxes [1] from Debian "testing" daily snapshots [2] with HashiCorp's Packer [3], which carry a base system.
 
 To use this, a Packer binary [4] and Virtualbox [5] must be present.
 There's a Debian package of Packer [6] becoming available for Debian 9, and other distributions have packages for that, too.
