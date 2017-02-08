@@ -32,6 +32,8 @@ $ vagrant box add mydebian debian-testing-vagrant.box
 
 Then, `vagrant init mydebian` could be performed in a random working directory.
 
+By the way, semi official Debian base boxes for Atlas are provided by the Debian Cloud Team [7].
+
 Have fun!
 
 Links
@@ -48,3 +50,5 @@ Links
 [5] https://www.virtualbox.org/
 
 [6] https://packages.qa.debian.org/p/packer.html
+
+[7] https://atlas.hashicorp.com/debian/
