@@ -13,12 +13,12 @@ $ make create
 
 Otherwise, you could run the template with:
 ```
-MD5=<hash> packer build debian-testing-vagrant.json
+$ MD5=<hash> packer build debian-testing-vagrant.json
 ```
 where `<hash>` must be copied from <http://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/MD5SUMS> (it's the hash for `debian-testing-amd64-netinst.iso`).
 Like:
 ```
-MD5=b92a4e25eb9997824b6d0f33198327e6 packer build debian-testing-vagrant.json
+$ MD5=b92a4e25eb9997824b6d0f33198327e6 packer build debian-testing-vagrant.json
 ```
 
 A fast internet connection is needed for good performance.
