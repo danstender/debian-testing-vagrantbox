@@ -3,7 +3,8 @@ create: reset
 	@MD5=`awk "/debian-testing/{print $(1)}" MD5SUMS` PACKER_LOG=1 packer build debian-testing-vagrant.json 2>>packer.log
 
 reset:
-	@rm -f packer.log debian-testing-vagrant.box MD5SUMS* output-virtualbox-iso/
+	@rm -f packer.log debian-testing-vagrant.box MD5SUMS
+	@rm -rf output-virtualbox-iso/ Vagrantfile
 
 clean: reset
 	@rm -rf packer_cache/
