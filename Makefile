@@ -1,6 +1,8 @@
+MD5SUMS := http://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/MD5SUMS
+MD5 := $(shell wget $(MD5SUMS) && awk '/debian-testing/{print $$1}' MD5SUMS)
+
 create: reset
-	@wget http://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/MD5SUMS
-	@MD5=`awk "/debian-testing/{print $(1)}" MD5SUMS` PACKER_LOG=1 packer build debian-testing-vagrant.json 2>>packer.log
+	MD5=$(MD5) PACKER_LOG=1 packer build debian-testing-vagrant.json 2>>packer.log
 
 reset:
 	@rm -f packer.log debian-testing-vagrant.box MD5SUMS
