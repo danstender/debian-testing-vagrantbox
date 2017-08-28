@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+
+import urllib2
+
+url = urllib2.urlopen('http://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/MD5SUMS')
+md5sums = url.read()
+print md5sums.split()[2]
