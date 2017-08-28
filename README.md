@@ -51,4 +51,4 @@ Links
 
 [6] https://packages.qa.debian.org/p/packer.html
 
-[7] https://atlas.hashicorp.com/debian/
+[7] https://app.vagrantup.com/debian
