@@ -27,7 +27,7 @@ If the time needed to install the Debian base system within the virtual machine 
 When the box is created it could be used with Vagrant.
 First, the new box has to be added:
 ```
-$ vagrant box add foo debian-testing-vagrant.box
+$ vagrant box add debian-testing-vagrant.box --name debian-testing
 ```
 
 Then, `vagrant init foo` could be performed in a random working directory.
