@@ -6,7 +6,7 @@ I've tested everything against Virtualbox 5.1.10, but other versions should also
 The builder of Packer needs the guest additions ISO image for Virtualbox, and downloads the corresponding version from <http://download.virtualbox.org/virtualbox>, if it's not to be found in one the usual places for it on the build machine.
 
 There's a Makefile included which conveniently provides the MD5 hash of the Debian netinst ISO for the Packer template.
-If you have GNU Make, awk and wget available you could just do:
+If you have GNU Make and Python2 available you could just do:
 ```
 $ make create
 ```
