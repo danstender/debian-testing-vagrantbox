@@ -32,7 +32,7 @@ $ vagrant box add foo debian-testing-vagrant.box
 
 Then, `vagrant init foo` could be performed in a random working directory.
 
-Tested with 5.2.22-126460\~Debian\~stretch.
+Tested with Virtualbox package 5.2.22-126460\~Debian\~stretch, Packer 1.3.3, Vagrant 1.9.1.
 
 By the way, semi official Debian base boxes for Atlas are provided by the Debian Cloud Team [7].
 
