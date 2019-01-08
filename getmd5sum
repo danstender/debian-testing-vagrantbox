@@ -3,5 +3,8 @@
 import urllib2
 
 url = urllib2.urlopen('http://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/MD5SUMS')
-md5sums = url.read()
-print md5sums.split()[4]
+md5sums = url.read().split()
+
+for i in md5sums:
+    if i == 'debian-testing-amd64-netinst.iso':
+        print md5sums[md5sums.index(i)-1]
