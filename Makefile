@@ -1,7 +1,8 @@
 MD5 := $(shell ./getmd5sum)
+ROOTPW := $(shell pwgen 12 1)
 
 create: reset
-	MD5=$(MD5) PACKER_LOG=1 packer build debian-testing-vagrant.json 2>>packer.log
+	MD5=$(MD5) ROOTPW=$(ROOTPW) PACKER_LOG=1 packer build debian-testing-vagrant.json 2>>packer.log
 
 reset:
 	@rm -f packer.log debian-testing-vagrant.box

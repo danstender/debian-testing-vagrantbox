@@ -1,6 +1,7 @@
 {
   "variables": {
-    "HASH": "{{env `MD5`}}"
+      "HASH": "{{env `MD5`}}",
+      "ROOTPASS": "{{ env `ROOTPW` }}"
     },
   "builders": [
     {
@@ -27,7 +28,9 @@
       "console-keymaps-at/keymap=us ",
       "keyboard-configuration/xkb-keymap=us ",
       "netcfg/get_hostname={{ .Name }} ",
-      "netcfg/get_domain=home.org <enter>"
+      "netcfg/get_domain=home.org ",
+      "passwd/root-password={{ user `ROOTPASS` }} ",
+      "passwd/root-password-again={{ user `ROOTPASS` }} <enter>"
       ]
     }
   ],
