@@ -18,19 +18,18 @@
     "boot_command": [
 	"<esc><wait>",
 	"install ",
-	"preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+	"url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
 	"auto ",
 	"debconf/frontend=noninteractive ",
-        "console-setup/ask_detect=false ",
-        "debian-installer=en_US ",
-        "locale=en_US ",
+	"console-setup/ask_detect=false ",
+	"locale=en_US ",
 	"kbd-chooser/method=us ",
-        "console-keymaps-at/keymap=us ",
-        "keyboard-configuration/xkb-keymap=us ",
-        "netcfg/get_hostname={{ .Name }} ",
-        "netcfg/get_domain=home.org ",
-        "passwd/root-password={{ user `ROOTPASS` }} ",
-        "passwd/root-password-again={{ user `ROOTPASS` }} <enter>"
+	"console-keymaps-at/keymap=us ",
+	"keyboard-configuration/xkb-keymap=us ",
+	"netcfg/get_hostname={{ .Name }} ",
+	"netcfg/get_domain=home ",
+	"passwd/root-password={{ user `ROOTPASS` }} ",
+	"passwd/root-password-again={{ user `ROOTPASS` }} <enter>"
       ]
     }
   ],
